@@ -1,0 +1,8 @@
+<ng-template #test>
+    cos cos {{aaa}}
+</ng-template>
+<ng-container *ngTemplateOutlet="test"></ng-container>
+
+<button (click)="loadChild()">load self</button>
+
+<app-templates-child></app-templates-child>
