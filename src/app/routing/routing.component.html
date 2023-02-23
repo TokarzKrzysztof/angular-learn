@@ -1,0 +1,8 @@
+<p>routing works!</p>
+<div style="display: flex;">
+    <button (click)="navigateTo('first')">first</button>
+    <button (click)="navigateTo('second')">second</button>
+    <button (click)="navigateBack()">back</button>
+    <button routerLink="first">first router link</button>
+</div>
+<router-outlet></router-outlet>

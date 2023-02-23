@@ -1,5 +1,4 @@
-import { Component, Directive, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Type } from '@angular/core';
 
 export class Logger {
   private readonly name: string;
