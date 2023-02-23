@@ -18,6 +18,7 @@ import { DirePipesComponent } from "./dire-pipes/dire-pipes.component";
 import { StoreModule } from '@ngrx/store';
 import { ForOfComponent } from "./for-of/for-of.component";
 import { StyleEncapComponent } from "./style-encap/style-encap.component";
+import { InputOutputComponent } from "./input-output/input-output.component";
 
 @NgModule({
     declarations: [AppComponent, NoStandaloneComponent],
@@ -44,7 +45,8 @@ import { StyleEncapComponent } from "./style-encap/style-encap.component";
         DirePipesComponent,
         StoreModule.forRoot({}, {}),
         ForOfComponent,
-        StyleEncapComponent
+        StyleEncapComponent,
+        InputOutputComponent
     ]
 })
 export class AppModule {}
