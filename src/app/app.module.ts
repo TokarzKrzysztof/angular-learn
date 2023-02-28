@@ -23,6 +23,7 @@ import { ViewProvidersComponent } from "./view-providers/view-providers.componen
 import { ViewProvidersModule } from './view-providers/view-providers/view-providers.module';
 import { DecoratorComponent } from "./decorator/decorator.component";
 import { HttpClientModule } from '@angular/common/http';
+import { FormsComponent } from "./forms/forms.component";
 
 @NgModule({
     declarations: [AppComponent, NoStandaloneComponent],
@@ -53,7 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
         InputOutputComponent,
         ViewProvidersComponent,
         DecoratorComponent,
-        HttpClientModule
+        HttpClientModule,
+        FormsComponent
     ]
 })
 export class AppModule {}
