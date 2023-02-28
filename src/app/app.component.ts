@@ -10,10 +10,14 @@ import { SomeService } from './services-instances/some.service';
 })
 export class AppComponent {
   title = 'angular-learn';
+  aaa: number = 0;
+  test = '';
   constructor(
     private viewContainerRef: ViewContainerRef,
     private someService: SomeService
-  ) {}
+  ) {
+    this.test = 'asdads'
+  }
 
   loadLazy() {
     // console.log(this.someService.random);

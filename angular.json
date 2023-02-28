@@ -9,13 +9,21 @@
         "@schematics/angular:component": {
           "style": "scss",
           "standalone": true,
-          "displayBlock": true
+          "displayBlock": true,
+          "inlineStyle": true,
+          "inlineTemplate": true,
+          "skipTests": true
         },
         "@schematics/angular:pipe": {
-          "standalone": true
+          "standalone": true,
+          "skipTests": true
         },
         "@schematics/angular:directive": {
-          "standalone": true
+          "standalone": true,
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",

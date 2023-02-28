@@ -19,6 +19,10 @@ import { StoreModule } from '@ngrx/store';
 import { ForOfComponent } from "./for-of/for-of.component";
 import { StyleEncapComponent } from "./style-encap/style-encap.component";
 import { InputOutputComponent } from "./input-output/input-output.component";
+import { ViewProvidersComponent } from "./view-providers/view-providers.component";
+import { ViewProvidersModule } from './view-providers/view-providers/view-providers.module';
+import { DecoratorComponent } from "./decorator/decorator.component";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [AppComponent, NoStandaloneComponent],
@@ -46,7 +50,10 @@ import { InputOutputComponent } from "./input-output/input-output.component";
         StoreModule.forRoot({}, {}),
         ForOfComponent,
         StyleEncapComponent,
-        InputOutputComponent
+        InputOutputComponent,
+        ViewProvidersComponent,
+        DecoratorComponent,
+        HttpClientModule
     ]
 })
 export class AppModule {}
