@@ -19,6 +19,9 @@ export class AppComponent {
     this.test = 'asdads'
   }
 
+  someMethod() {
+    console.log(123333)
+  }
   loadLazy() {
     // console.log(this.someService.random);
     // const inj = Injector.create({

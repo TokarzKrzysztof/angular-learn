@@ -21,7 +21,7 @@ import { StyleEncapComponent } from "./style-encap/style-encap.component";
 import { InputOutputComponent } from "./input-output/input-output.component";
 import { ViewProvidersComponent } from "./view-providers/view-providers.component";
 import { ViewProvidersModule } from './view-providers/view-providers/view-providers.module';
-import { DecoratorComponent } from "./decorator/decorator.component";
+// import { DecoratorComponent } from "./decorator/decorator.component";
 import { HttpClientModule } from '@angular/common/http';
 import { FormsComponent } from "./forms/forms.component";
 import { AnimationsComponent } from "./animations/animations.component";
@@ -32,9 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     providers: [SomeService],
     bootstrap: [AppComponent],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: 'serverApp' }),
         BrowserAnimationsModule,
-        AppRoutingModule,
+        // AppRoutingModule,
         TemplatesContainerComponent,
         InjectionTokensComponent,
         ChangeDetectionComponent,
@@ -43,12 +43,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         SecondModule,
         ThirdModule,
         RouterModule.forRoot([
-            {
-                path: 'test',
-                loadChildren: () => import('./routing/routing.routes').then((c) => c.ROUTING_ROUTES),
-            },
-            { path: '**', redirectTo: '/test', pathMatch: 'full' },
-        ]),
+    {
+        path: 'test',
+        loadChildren: () => import('./routing/routing.routes').then((c) => c.ROUTING_ROUTES),
+    },
+    { path: '**', redirectTo: '/test', pathMatch: 'full' },
+], {
+    initialNavigation: 'enabledBlocking'
+}),
         SubjectsComponent,
         DirePipesComponent,
         StoreModule.forRoot({}, {}),
@@ -56,7 +58,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         StyleEncapComponent,
         InputOutputComponent,
         ViewProvidersComponent,
-        DecoratorComponent,
+        // DecoratorComponent,
         HttpClientModule,
         FormsComponent,
         AnimationsComponent
