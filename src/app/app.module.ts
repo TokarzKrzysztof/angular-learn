@@ -24,6 +24,8 @@ import { ViewProvidersModule } from './view-providers/view-providers/view-provid
 import { DecoratorComponent } from "./decorator/decorator.component";
 import { HttpClientModule } from '@angular/common/http';
 import { FormsComponent } from "./forms/forms.component";
+import { AnimationsComponent } from "./animations/animations.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [AppComponent, NoStandaloneComponent],
@@ -31,6 +33,7 @@ import { FormsComponent } from "./forms/forms.component";
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         TemplatesContainerComponent,
         InjectionTokensComponent,
@@ -55,7 +58,8 @@ import { FormsComponent } from "./forms/forms.component";
         ViewProvidersComponent,
         DecoratorComponent,
         HttpClientModule,
-        FormsComponent
+        FormsComponent,
+        AnimationsComponent
     ]
 })
 export class AppModule {}
