@@ -30,6 +30,13 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "copy-package": {
+          "builder": "@example/copy-file:copy",
+          "options": {
+            "source": "package.json",
+            "destination": "package-copy.json"
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
