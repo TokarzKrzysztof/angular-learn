@@ -10,8 +10,6 @@
           "style": "scss",
           "standalone": true,
           "displayBlock": true,
-          "inlineStyle": true,
-          "inlineTemplate": true,
           "skipTests": true
         },
         "@schematics/angular:pipe": {
@@ -81,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-learn:build:production"
+              "buildTarget": "angular-learn:build:production"
             },
             "development": {
-              "browserTarget": "angular-learn:build:development"
+              "buildTarget": "angular-learn:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-learn:build"
+            "buildTarget": "angular-learn:build"
           }
         },
         "test": {
@@ -129,7 +127,7 @@
           "defaultConfiguration": "production"
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
               "browserTarget": "angular-learn:build:development",
@@ -143,7 +141,7 @@
           "defaultConfiguration": "development"
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "routes": [
               "/"

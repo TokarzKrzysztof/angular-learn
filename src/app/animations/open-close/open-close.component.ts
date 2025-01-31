@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-open-close',
@@ -35,7 +35,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   animations: [
     trigger('openClose', [
       // ...
-      state('open', style("asda")),
+      state('open', style({height: '100px'})),
       state('closed', style({
         height: '100px',
         opacity: 0.8,
