@@ -20,7 +20,7 @@ import { SubjectsComponent } from "./subjects/subjects.component";
 import { TemplatesContainerComponent } from './templates-container/templates-container.component';
 import { ViewProvidersComponent } from "./view-providers/view-providers.component";
 // import { DecoratorComponent } from "./decorator/decorator.component";
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimationsComponent } from "./animations/animations.component";
 import { ComponentSelectorComponent } from "./component-selector/component-selector.component";
@@ -30,12 +30,8 @@ import { LifecycleHooksProjectedComponent } from "./lifecycle-hooks/lifecycle-ho
 import { LifecycleHooksComponent } from "./lifecycle-hooks/lifecycle-hooks.component";
 import { SecurityComponent } from "./security/security.component";
 
-@NgModule({
-    declarations: [AppComponent, NoStandaloneComponent],
-    providers: [SomeService],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule.withServerTransition({ appId: 'serverApp' }),
+@NgModule({ declarations: [AppComponent, NoStandaloneComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }),
         BrowserAnimationsModule,
         // AppRoutingModule,
         TemplatesContainerComponent,
@@ -61,15 +57,11 @@ import { SecurityComponent } from "./security/security.component";
         StyleEncapComponent,
         InputOutputComponent,
         ViewProvidersComponent,
-        // DecoratorComponent,
-        HttpClientModule,
         FormsComponent,
         AnimationsComponent,
         SecurityComponent,
         LifecycleHooksComponent,
         LifecycleHooksProjectedComponent,
         DynamicComponentComponent,
-        ComponentSelectorComponent
-    ]
-})
+        ComponentSelectorComponent], providers: [SomeService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
