@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { SomeService } from '../../some.service';
 
 @Component({
   selector: 'app-for-second',
   templateUrl: './for-second.component.html',
-  styleUrls: ['./for-second.component.scss']
+  styleUrls: ['./for-second.component.scss'],
+  standalone: false
 })
 export class ForSecondComponent {
   constructor(private s: SomeService){
