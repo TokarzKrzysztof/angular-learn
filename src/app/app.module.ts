@@ -20,8 +20,8 @@ import { TemplatesContainerComponent } from './templates-container/templates-con
 import { ViewProvidersComponent } from './view-providers/view-providers.component';
 // import { DecoratorComponent } from "./decorator/decorator.component";
 import {
-    provideHttpClient,
-    withInterceptorsFromDi,
+  provideHttpClient,
+  withInterceptorsFromDi,
 } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimationsComponent } from './animations/animations.component';
@@ -30,6 +30,7 @@ import { DynamicComponentComponent } from './dynamic-component/dynamic-component
 import { FormsComponent } from './forms/forms.component';
 import { LifecycleHooksProjectedComponent } from './lifecycle-hooks/lifecycle-hooks-projected/lifecycle-hooks-projected.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { LinkedSignalComponent } from "./linked-signal/linked-signal.component";
 import { SecurityComponent } from './security/security.component';
 
 @NgModule({
@@ -45,19 +46,15 @@ import { SecurityComponent } from './security/security.component';
     FirstModule,
     SecondModule,
     ThirdModule,
-    RouterModule.forRoot(
-      [
+    RouterModule.forRoot([
         {
-          path: 'test',
-          loadChildren: () =>
-            import('./routing/routing.routes').then((c) => c.ROUTING_ROUTES),
+            path: 'test',
+            loadChildren: () => import('./routing/routing.routes').then((c) => c.ROUTING_ROUTES),
         },
         { path: '**', redirectTo: '/test', pathMatch: 'full' },
-      ],
-      {
+    ], {
         initialNavigation: 'enabledBlocking',
-      }
-    ),
+    }),
     SubjectsComponent,
     DirePipesComponent,
     StoreModule.forRoot({}, {}),
@@ -72,7 +69,8 @@ import { SecurityComponent } from './security/security.component';
     LifecycleHooksProjectedComponent,
     DynamicComponentComponent,
     ComponentSelectorComponent,
-  ],
+    LinkedSignalComponent
+],
   providers: [
     { provide: APP_ID, useValue: 'serverApp' },
     SomeService,

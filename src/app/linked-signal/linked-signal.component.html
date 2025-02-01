@@ -1,0 +1,21 @@
+<p>linked-signal works!</p>
+<p>counter: {{ counter() }}</p>
+<p>counter2: {{ secondCounter() }}</p>
+<p>doubled Or 1000: {{ linkedCounter() }}</p>
+
+<button (click)="increment()">increment</button>
+<button (click)="secondIncrement()">increment 2</button>
+<button (click)="linkedCounter.set(1000)">set 1000</button>
+@if (counter() === 0) {
+  @let someting = 23;
+  <p>cos tam</p>
+  <p>To convert {{ someting }}</p>
+  <p>To convert2 {{ someting }}</p>
+} @else {
+  @let someting = 10;
+  <p>bla bla</p>
+  <p>To convert {{ someting }}</p>
+  <p>To convert2 {{ someting }}</p>
+}
+
+<p>To convert {{ "costam" | convert }}</p>
