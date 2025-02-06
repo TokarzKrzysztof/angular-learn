@@ -1,0 +1,10 @@
+<p>resource-api works!</p>
+<input type="text" [formControl]="idControl" #input/>
+@if (swResource.isLoading()) {
+  <p>Trwa ładowanie...</p>
+} 
+@if (swResource.status() === 1) {
+    <p style="color: red;">Wystąpił błąd dla id - {{input.value}}</p>
+}
+<!-- @if (s) {} -->
+<p>{{ swResource.value() | json }}</p>

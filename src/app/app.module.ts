@@ -32,6 +32,9 @@ import { LifecycleHooksProjectedComponent } from './lifecycle-hooks/lifecycle-ho
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { LinkedSignalComponent } from "./linked-signal/linked-signal.component";
 import { SecurityComponent } from './security/security.component';
+import { ParentInjectionComponent } from "./parent-injection/parent-injection.component";
+import { ConstructorNotCalledComponent } from "./constructor-not-called/constructor-not-called.component";
+import { ResourceApiComponent } from "./resource-api/resource-api.component";
 
 @NgModule({
   declarations: [AppComponent, NoStandaloneComponent],
@@ -69,7 +72,10 @@ import { SecurityComponent } from './security/security.component';
     LifecycleHooksProjectedComponent,
     DynamicComponentComponent,
     ComponentSelectorComponent,
-    LinkedSignalComponent
+    LinkedSignalComponent,
+    ParentInjectionComponent,
+    ConstructorNotCalledComponent,
+    ResourceApiComponent
 ],
   providers: [
     { provide: APP_ID, useValue: 'serverApp' },
