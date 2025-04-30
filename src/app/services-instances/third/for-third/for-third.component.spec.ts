@@ -8,7 +8,6 @@ describe('ForThirdComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ ForThirdComponent ]
     })
     .compileComponents();
 

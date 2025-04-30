@@ -20,4 +20,8 @@ describe('LinkedSignalComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('gets random number', () => {
+    const result = component.getRandomized();
+    expect(result).toBeGreaterThanOrEqual(0)
+  });
 });

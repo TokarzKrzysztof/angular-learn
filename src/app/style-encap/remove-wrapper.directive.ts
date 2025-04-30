@@ -8,7 +8,7 @@ import { SomeService } from '../services-instances/some.service';
 })
 export class RemoveWrapperDirective {
   @Input() test: string;
-  constructor(private elRef: ElementRef, private renderer: Renderer2, @Self() private s: SomeService) {
+  constructor(private elRef: ElementRef, private renderer: Renderer2, private s: SomeService) {
     s.from = 'directive';
     setTimeout(() => {
       console.log(s)

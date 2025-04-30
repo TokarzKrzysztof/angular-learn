@@ -8,7 +8,6 @@ describe('ForSecondComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ ForSecondComponent ]
     })
     .compileComponents();
 

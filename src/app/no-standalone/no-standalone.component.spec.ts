@@ -8,7 +8,6 @@ describe('NoStandaloneComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ NoStandaloneComponent ]
     })
     .compileComponents();
 

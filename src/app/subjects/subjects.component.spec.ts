@@ -1,6 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubjectsComponent } from './subjects.component';
+import { SomeService } from '../services-instances/some.service';
+
+class SomeServiceMock extends SomeService {
+  override from = '';
+  override random = 10;
+}
 
 describe('SubjectsComponent', () => {
   let component: SubjectsComponent;
@@ -8,7 +14,10 @@ describe('SubjectsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ SubjectsComponent ]
+      imports: [ SubjectsComponent ],
+      providers: [
+        {provide: SomeService, useClass: SomeServiceMock}
+      ]
     })
     .compileComponents();
 
