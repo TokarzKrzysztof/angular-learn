@@ -1,6 +1,16 @@
-import { Component } from '@angular/core';
-import { IAppComponent } from './IAppComponent';
-
+import {
+  ChangeDetectorRef,
+  Component,
+  inject,
+  InjectionToken,
+  Injector,
+  Optional,
+  SkipSelf,
+  viewChild,
+} from '@angular/core';
+import { IAppComponent, SOME_TOKEN } from './IAppComponent';
+import { SomeFake } from './fake-storage/fake-variables';
+import { FakeStorageComponent } from './fake-storage/fake-storage.component';
 
 // //take the first observable to emit
 // const example = race(
@@ -21,14 +31,34 @@ import { IAppComponent } from './IAppComponent';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: false,
-  providers: [{ provide: IAppComponent, useExisting: AppComponent }],
+  providers: [
+    { provide: IAppComponent, useExisting: AppComponent },
+    { provide: 'dupa', useValue: 'pppp2' },
+    { provide: SOME_TOKEN, useFactory: (value: number) => inject(SOME_TOKEN, { skipSelf: true }) + 10 },
+  ],
 })
 export class AppComponent implements IAppComponent {
+  private fakeCom = viewChild(FakeStorageComponent);
+  private fakeCom2 = inject(SOME_TOKEN);
   something = Math.random();
-  array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,3,213,231,12,43,53,6,457,68,798,98,978675,45,343,23,13,123,43,5,65,756,567,867,1]
+  array = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 3, 213, 231, 12, 43, 53, 6, 457, 68,
+    798, 98, 978675, 45, 343, 23, 13, 123, 43, 5, 65, 756, 567, 867, 1,
+  ];
+
+  constructor(private injector: Injector) {
+    // console.log(this.fakeCom());
+    // console.log(this.fakeCom2);
+    // console.log(stroare);
+  }
 
   ngOnInit() {
-    console.log(this.something)
+    // setInterval(() => {
+    //   SomeFake.Somee++;
+    //   console.log(this.injector.get('dupa'));
+    //   // console.log(this.injector.get(SOME_TOKEN));
+    //   this.fakeCom()?.detect();
+    // }, 1000);
   }
 
   // title = 'angular-learn';

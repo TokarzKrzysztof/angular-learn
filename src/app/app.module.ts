@@ -35,6 +35,7 @@ import { SecurityComponent } from './security/security.component';
 import { ParentInjectionComponent } from "./parent-injection/parent-injection.component";
 import { ConstructorNotCalledComponent } from "./constructor-not-called/constructor-not-called.component";
 import { ResourceApiComponent } from "./resource-api/resource-api.component";
+import { FakeStorageComponent } from "./fake-storage/fake-storage.component";
 
 @NgModule({
   declarations: [AppComponent, NoStandaloneComponent],
@@ -75,7 +76,8 @@ import { ResourceApiComponent } from "./resource-api/resource-api.component";
     LinkedSignalComponent,
     ParentInjectionComponent,
     ConstructorNotCalledComponent,
-    ResourceApiComponent
+    ResourceApiComponent,
+    FakeStorageComponent
 ],
   providers: [
     { provide: APP_ID, useValue: 'serverApp' },
