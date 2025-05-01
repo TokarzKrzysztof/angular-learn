@@ -5,6 +5,7 @@ import {
   InjectionToken,
   Injector,
   Optional,
+  signal,
   SkipSelf,
   viewChild,
 } from '@angular/core';
@@ -45,6 +46,7 @@ export class AppComponent implements IAppComponent {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 3, 213, 231, 12, 43, 53, 6, 457, 68,
     798, 98, 978675, 45, 343, 23, 13, 123, 43, 5, 65, 756, 567, 867, 1,
   ];
+  count = signal(0);
 
   constructor(private injector: Injector) {
     // console.log(this.fakeCom());
@@ -53,12 +55,13 @@ export class AppComponent implements IAppComponent {
   }
 
   ngOnInit() {
-    // setInterval(() => {
-    //   SomeFake.Somee++;
-    //   console.log(this.injector.get('dupa'));
-    //   // console.log(this.injector.get(SOME_TOKEN));
-    //   this.fakeCom()?.detect();
-    // }, 1000);
+    setInterval(() => {
+      this.count.update(val => val + 1)
+      // SomeFake.Somee++;
+      // console.log(this.injector.get('dupa'));
+      // // console.log(this.injector.get(SOME_TOKEN));
+      // this.fakeCom()?.detect();
+    }, 1000);
   }
 
   // title = 'angular-learn';

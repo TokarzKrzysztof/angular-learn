@@ -36,6 +36,7 @@ import { ParentInjectionComponent } from "./parent-injection/parent-injection.co
 import { ConstructorNotCalledComponent } from "./constructor-not-called/constructor-not-called.component";
 import { ResourceApiComponent } from "./resource-api/resource-api.component";
 import { FakeStorageComponent } from "./fake-storage/fake-storage.component";
+import { BindingsComponent } from "./bindings/bindings.component";
 
 @NgModule({
   declarations: [AppComponent, NoStandaloneComponent],
@@ -77,7 +78,8 @@ import { FakeStorageComponent } from "./fake-storage/fake-storage.component";
     ParentInjectionComponent,
     ConstructorNotCalledComponent,
     ResourceApiComponent,
-    FakeStorageComponent
+    FakeStorageComponent,
+    BindingsComponent
 ],
   providers: [
     { provide: APP_ID, useValue: 'serverApp' },

@@ -29,7 +29,7 @@
 </app-lifecycle-hooks>
 <button (click)="null">trigger</button> -->
 <!-- <app-dynamic-component [class.dupa]="true"></app-dynamic-component> -->
-<!-- <app-component-selector></app-component-selector> -->
+<app-component-selector></app-component-selector>
 <!-- <app-linked-signal></app-linked-signal> -->
 <!-- <app-parent-injection></app-parent-injection> -->
 <!-- @for (item of array; track item) {
@@ -42,4 +42,5 @@
 } -->
 
 <!-- <app-resource-api></app-resource-api>  -->
- <app-fake-storage></app-fake-storage>
+<!-- <app-fake-storage></app-fake-storage> -->
+<app-bindings [lastName]="count.toString()"></app-bindings>

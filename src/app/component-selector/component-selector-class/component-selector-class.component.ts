@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   imports: [CommonModule],
   template: `
     <p>
-      component-selector-class works! {{abc}}
+      app-test works! {{abc}}
     </p>
   `,
   styles: [

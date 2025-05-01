@@ -8,7 +8,7 @@ import { ComponentSelectorClassComponent } from 'src/app/component-selector/comp
   imports: [CommonModule, ComponentSelectorClassComponent],
   template: `
     <!-- <div app-test=23></div> -->
-    <app-test class="tst"></app-test>
+    <app-test class="tst" [abc]="11"></app-test>
     <!-- <div [attr.app-test]='23'></div> -->
     <!-- <button (click)="">toggle class</button> -->
   `,
