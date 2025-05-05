@@ -34,6 +34,7 @@ import { FirstModule } from './services-instances/first/first.module';
 import { SecondModule } from './services-instances/second/second.module';
 import { SomeService } from './services-instances/some.service';
 import { ThirdModule } from './services-instances/third/third.module';
+import { SignalsComponent } from "./signals/signals.component";
 import { StyleEncapComponent } from './style-encap/style-encap.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { TemplatesContainerComponent } from './templates-container/templates-container.component';
@@ -82,7 +83,8 @@ import { ViewProvidersComponent } from './view-providers/view-providers.componen
     FakeStorageComponent,
     BindingsComponent,
     ChangeDetectionFirstDeepComponent,
-    HotColdComponent
+    HotColdComponent,
+    SignalsComponent
 ],
   providers: [
     { provide: APP_ID, useValue: 'serverApp' },
