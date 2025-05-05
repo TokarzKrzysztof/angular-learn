@@ -1,16 +1,5 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  inject,
-  InjectionToken,
-  Injector,
-  Optional,
-  signal,
-  SkipSelf,
-  viewChild,
-} from '@angular/core';
+import { Component, inject, Injector, signal, viewChild } from '@angular/core';
 import { IAppComponent, SOME_TOKEN } from './IAppComponent';
-import { SomeFake } from './fake-storage/fake-variables';
 import { FakeStorageComponent } from './fake-storage/fake-storage.component';
 
 // //take the first observable to emit
@@ -56,7 +45,7 @@ export class AppComponent implements IAppComponent {
 
   ngOnInit() {
     setInterval(() => {
-      this.count.update(val => val + 1)
+      this.count.update((val) => val + 1);
       // SomeFake.Somee++;
       // console.log(this.injector.get('dupa'));
       // // console.log(this.injector.get(SOME_TOKEN));

@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TestPipePipe } from './test-pipe.pipe';
-import { TestDireDirective } from './test-dire.directive';
+import { Component } from '@angular/core';
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { TestDireDirective } from './test-dire.directive';
+import { TestPipePipe } from './test-pipe.pipe';
 
 type Join<Str extends string, Separator extends string = ' '> = Str extends `${infer First}${Separator}${infer Rest}` ? Join<`${First}${Rest}`, Separator> : Str;
 
