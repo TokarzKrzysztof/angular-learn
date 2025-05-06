@@ -1,4 +1,4 @@
-import { Component, inject, Injector, signal, viewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, Injector, signal, viewChild } from '@angular/core';
 import { IAppComponent, SOME_TOKEN } from './IAppComponent';
 import { FakeStorageComponent } from './fake-storage/fake-storage.component';
 
@@ -36,6 +36,7 @@ export class AppComponent implements IAppComponent {
     798, 98, 978675, 45, 343, 23, 13, 123, 43, 5, 65, 756, 567, 867, 1,
   ];
   count = signal(0);
+  cdr = inject(ChangeDetectorRef);
 
   constructor(private injector: Injector) {
     // console.log(this.fakeCom());
@@ -44,8 +45,13 @@ export class AppComponent implements IAppComponent {
   }
 
   ngOnInit() {
+    // this.count.set(this.count() + 1);
+    //   console.log(this.count());
     setInterval(() => {
-      this.count.update((val) => val + 1);
+      // this.cdr.markForCheck();
+      this.count.set(this.count() + 1);
+      // console.log(this.count());
+      // this.count.update((val) => val + 1);
       // SomeFake.Somee++;
       // console.log(this.injector.get('dupa'));
       // // console.log(this.injector.get(SOME_TOKEN));

@@ -11,6 +11,7 @@ import { AnimationsComponent } from './animations/animations.component';
 import { AppComponent } from './app.component';
 import { BindingsComponent } from "./bindings/bindings.component";
 import { ChangeDetectionFirstDeepComponent } from "./change-detection/change-detection-first/change-detection-first-deep/change-detection-first-deep.component";
+import { ChangeDetectionOnpushComponent } from "./change-detection/change-detection-onpush/change-detection-onpush.component";
 import { ChangeDetectionComponent } from './change-detection/change-detection.component';
 import { ComponentSelectorComponent } from './component-selector/component-selector.component';
 import { ConstructorNotCalledComponent } from "./constructor-not-called/constructor-not-called.component";
@@ -84,7 +85,8 @@ import { ViewProvidersComponent } from './view-providers/view-providers.componen
     BindingsComponent,
     ChangeDetectionFirstDeepComponent,
     HotColdComponent,
-    SignalsComponent
+    SignalsComponent,
+    ChangeDetectionOnpushComponent
 ],
   providers: [
     { provide: APP_ID, useValue: 'serverApp' },

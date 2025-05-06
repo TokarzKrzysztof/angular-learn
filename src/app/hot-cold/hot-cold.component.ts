@@ -22,6 +22,12 @@ export class HotColdComponent implements OnInit {
     hot.subscribe(console.log);
     hot.subscribe(console.log);
     hot.subscribe(console.log);
+
+    // observables are synchronous or asynchronous
+    of(12).subscribe(() => {
+      console.log('first')
+    })
+    console.log('second')
   }
 }
 

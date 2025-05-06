@@ -15,7 +15,6 @@ export class SignalsComponent {
   // resul23t = toSignal(this.httpClient.get<unknown>(`http://swapi.dev/api/planets/1/`));
   result = toSignal(this.httpClient.get<{ created: string }>(`https://swapi.dev/api/people/7/`).pipe(delay(3000)), {
     // initialValue: { created: 'test' },
-    requireSync: true
   });
   // result2 = toSignal(this.httpClient.get<unknown>(`https://swapi.dev/api/people/8/`));
   // result3 = toSignal(this.httpClient.get<unknown>(`https://swapi.dev/api/people/9/`));
