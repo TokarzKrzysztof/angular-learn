@@ -1,6 +1,4 @@
-import { ChangeDetectorRef, Component, inject, Injector, signal, viewChild } from '@angular/core';
-import { IAppComponent, SOME_TOKEN } from './IAppComponent';
-import { FakeStorageComponent } from './fake-storage/fake-storage.component';
+import { Component } from '@angular/core';
 
 // //take the first observable to emit
 // const example = race(
@@ -22,41 +20,41 @@ import { FakeStorageComponent } from './fake-storage/fake-storage.component';
   styleUrls: ['./app.component.scss'],
   standalone: false,
   providers: [
-    { provide: IAppComponent, useExisting: AppComponent },
-    { provide: 'dupa', useValue: 'pppp2' },
-    { provide: SOME_TOKEN, useFactory: (value: number) => inject(SOME_TOKEN, { skipSelf: true }) + 10 },
-  ],
+    // { provide: IAppComponent, useExisting: AppComponent },
+    // { provide: 'dupa', useValue: 'pppp2' },
+    // { provide: SOME_TOKEN, useFactory: (value: number) => inject(SOME_TOKEN, { skipSelf: true }) + 10 },
+  ]
 })
-export class AppComponent implements IAppComponent {
-  private fakeCom = viewChild(FakeStorageComponent);
-  private fakeCom2 = inject(SOME_TOKEN);
-  something = Math.random();
-  array = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 3, 213, 231, 12, 43, 53, 6, 457, 68,
-    798, 98, 978675, 45, 343, 23, 13, 123, 43, 5, 65, 756, 567, 867, 1,
-  ];
-  count = signal(0);
-  cdr = inject(ChangeDetectorRef);
+export class AppComponent {
+  // private fakeCom = viewChild(FakeStorageComponent);
+  // private fakeCom2 = inject(SOME_TOKEN);
+  // something = Math.random();
+  // array = [
+  //   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 3, 213, 231, 12, 43, 53, 6, 457, 68,
+  //   798, 98, 978675, 45, 343, 23, 13, 123, 43, 5, 65, 756, 567, 867, 1,
+  // ];
+  // count = signal(0);
+  // cdr = inject(ChangeDetectorRef);
 
-  constructor(private injector: Injector) {
-    // console.log(this.fakeCom());
-    // console.log(this.fakeCom2);
-    // console.log(stroare);
-  }
+  // constructor(private injector: Injector) {
+  // console.log(this.fakeCom());
+  // console.log(this.fakeCom2);
+  // console.log(stroare);
+  // }
 
   ngOnInit() {
     // this.count.set(this.count() + 1);
     //   console.log(this.count());
-    setInterval(() => {
-      // this.cdr.markForCheck();
-      this.count.set(this.count() + 1);
-      // console.log(this.count());
-      // this.count.update((val) => val + 1);
-      // SomeFake.Somee++;
-      // console.log(this.injector.get('dupa'));
-      // // console.log(this.injector.get(SOME_TOKEN));
-      // this.fakeCom()?.detect();
-    }, 1000);
+    // setInterval(() => {
+    // this.cdr.markForCheck();
+    // this.count.set(this.count() + 1);
+    // console.log(this.count());
+    // this.count.update((val) => val + 1);
+    // SomeFake.Somee++;
+    // console.log(this.injector.get('dupa'));
+    // // console.log(this.injector.get(SOME_TOKEN));
+    // this.fakeCom()?.detect();
+    // }, 1000);
   }
 
   // title = 'angular-learn';

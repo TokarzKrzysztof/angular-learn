@@ -3,7 +3,7 @@
 @if (swResource.isLoading()) {
   <p>Trwa ładowanie...</p>
 } 
-@if (swResource.status() === 1) {
+@if (swResource.status() === 'error') {
     <p style="color: red;">Wystąpił błąd dla id - {{input.value}}</p>
 }
 <!-- @if (s) {} -->
